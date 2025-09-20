@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D1as0x</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content from D1as0x</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <managingEditor>xxx@example.com (D1as0x)</managingEditor>
+    <webMaster>xxx@example.com (D1as0x)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Thu, 18 Sep 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>SunsetDecoy - Easy</title>
+      <link>http://localhost:1313/posts/offsec/sunsetdecoy/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>xxx@example.com (D1as0x)</author>
+      <guid>http://localhost:1313/posts/offsec/sunsetdecoy/</guid>
+      <description>
+        <![CDATA[<h1>SunsetDecoy - Easy</h1><p>Author: D1as0x(xxx@example.com)</p>
+        
+          <!-- cole isto no corpo do post (depois do front matter) -->
+
+<article class="writeup">
+  <header class="hero">
+    <div class="meta">
+      <h1>SunsetDecoy</h1>
+      <p class="subtitle">SunsetDecoy Walkthrough</p>
+      <div class="links">
+        <a href="/posts/offsec/" class="back">← Back to OffSec</a>
+      </div>
+    </div>
+    <figure class="cover">
+      <img src="/sunsetDecoy/sunset.png" alt="SunsetDecoy cover">
+    </figure>
+  </header>
+
+  <main class="content">
+    <section class="section">
+      <h2>Summary</h2>
+      <p>The SunsetDecoy machine is a web-based OffSec machine containing sensitive files protected by a password. We used John the Ripper and unshadow to find a valid user. After the first login in a restricted (rbash) shell, we bypassed the limitations and exploited the chrootkit vulnerability (CVE-2014-0476) to escalate privileges and gain root.</p>
+        
+        <hr><p>Published on 2025-09-18 at <a href='http://localhost:1313/'>D1as0x</a>, last modified on 2025-09-18</p>]]>
+      </description>
+      
+        <category>OffSec</category><category>Easy</category>
+      
+    </item>
+    
+  </channel>
+</rss>

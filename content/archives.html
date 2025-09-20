@@ -1,0 +1,78 @@
++++
+date = '2025-09-18T12:37:49-03:00'
+draft = false
+title = 'Archives'
++++
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Platforms Archive</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 2px solid #ff4444;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #ff4444;
+    }
+
+    .card a {
+      color: #ff4444;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .description {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #a0a0a0;
+    }
+  </style>
+</head>
+<body>
+  <h1>💀 CTF Platforms</h1>
+
+  <div class="container">
+    <div class="card">
+      <a href="pages/offsec/">OffSec</a>
+      <div class="description">Machines & Labs</div>
+    </div>
+
+    <div class="card">
+      <a href="pages/htb/">Hack The Box</a>
+      <div class="description">Machines & Labs</div>
+    </div>
+
+    <div class="card">
+      <a href="pages/tym/">TryHackMe</a>
+      <div class="description">Machines & Labs</div>
+    </div>
+
+  </div>
+</body>
+</html>

