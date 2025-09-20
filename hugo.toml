@@ -3,5 +3,3 @@ publishDir = 'docs'
 languageCode = 'en-us'
 title = 'D1as0x'
 theme = "reimu"
-relativeURLs = true
-canonifyURLs = true
