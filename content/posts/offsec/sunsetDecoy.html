@@ -20,11 +20,11 @@ description = "SunsetDecoy Walkthrough (OffSec - Easy)."
       <h1>SunsetDecoy</h1>
       <p class="subtitle">SunsetDecoy Walkthrough</p>
       <div class="links">
-        <a href="posts/offsec/" class="back">← Back to OffSec</a>
+        <a href="/posts/offsec/" class="back">← Back to OffSec</a>
       </div>
     </div>
     <figure class="cover">
-      <img src="sunsetDecoy/sunset.png" alt="SunsetDecoy cover">
+      <img src="/sunsetDecoy/sunset.png" alt="SunsetDecoy cover">
     </figure>
   </header>
 
@@ -58,7 +58,7 @@ PORT   STATE SERVICE VERSION
 
       <p>Accessing port 80 (HTTP) revealed the file <code>save.zip</code>, which was subsequently downloaded for further analysis.:</p>
       <figure class="screenshot">
-        <img src="blog/sunsetDecoy/pasted-image-20250917110228.png" alt="Download ZIP">
+        <img src="/sunsetDecoy/pasted-image-20250917110228.png" alt="Download ZIP">
       </figure>
     </section>
 
@@ -155,20 +155,20 @@ server  (296640a3b825115a47b68fc44501c828)</code></pre>
       <p>After starting an SSH session with the user <code>296640a3b825115a47b68fc44501c828</code>, it was observed that the shell was running in restricted mode <code>rbash</code>. In this mode, Bash restricts certain commands, limiting full shell access.</p>
 
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917114117.png" alt="rbash restriction">
+        <img src="/sunsetDecoy/pasted-image-20250917114117.png" alt="rbash restriction">
       </figure>
 
       <p>To bypass this restriction, online research was conducted, leading to a relevant GitHub post:</p>
       <p><a href="https://gist.github.com/PSJoshi/04c0e239ac7b486efb3420db4086e290" target="_blank" rel="noopener noreferrer">gist.github.com/PSJoshi/... (escape rbash)</a></p>
 
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917114001.png" alt="Bypass restriction rbash">
+        <img src="/sunsetDecoy/pasted-image-20250917114001.png" alt="Bypass restriction rbash">
       </figure>
 
       <p>After bypassing the restricted shell, the first flag was obtained.</p>
 
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917114729.png" alt="First flag">
+        <img src="/sunsetDecoy/pasted-image-20250917114729.png" alt="First flag">
       </figure>
     </section>
 
@@ -179,7 +179,7 @@ server  (296640a3b825115a47b68fc44501c828)</code></pre>
       <p>After running the <code>honeypot.decoy</code> script several times using option <code>5</code>, the system's running processes were checked.</p>
       
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917115517.png" alt="Script honeypot.decoy">
+        <img src="/sunsetDecoy/pasted-image-20250917115517.png" alt="Script honeypot.decoy">
       </figure>
       
       <p>By analyzing the running processes, it was possible to identify that <code>chkrootkit-0.49</code> is vulnerable to privilege escalation.</p>
@@ -192,7 +192,7 @@ server  (296640a3b825115a47b68fc44501c828)</code></pre>
       </table>
 
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917115408.png" alt="system processes">
+        <img src="/sunsetDecoy/pasted-image-20250917115408.png" alt="system processes">
       </figure>
 
       <p>To exploit the vulnerability, the exploit was transferred to the attacking machine and the following steps were performed:</p>
@@ -235,7 +235,7 @@ server  (296640a3b825115a47b68fc44501c828)</code></pre>
       </div>      
 
         <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917121957.png" alt="">
+        <img src="/sunsetDecoy/pasted-image-20250917121957.png" alt="">
       </figure>
 
         <li>Grant execution permission to the file:</li>
@@ -276,14 +276,14 @@ server  (296640a3b825115a47b68fc44501c828)</code></pre>
       </div>
       
        <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917122405.png" alt="">
+        <img src="/sunsetDecoy/pasted-image-20250917122405.png" alt="">
       </figure>
       </ol>
 
       <p>After establishing the reverse shell, the system was accessed with the necessary privileges and the final flag was retrieved.</p>
 
       <figure class="screenshot">
-        <img src="sunsetDecoy/pasted-image-20250917122542.png" alt="root flag">
+        <img src="/sunsetDecoy/pasted-image-20250917122542.png" alt="root flag">
       </figure>
     </section>
   </main>
