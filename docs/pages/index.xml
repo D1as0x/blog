@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on D1as0x</title>
-    <link>https://d1as0x.github.io/pages/</link>
+    <link>http://localhost:1313/pages/</link>
     <description>Recent content from D1as0x</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate></lastBuildDate>
     
     
-    <atom:link href="https://d1as0x.github.io/pages/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
